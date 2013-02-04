@@ -1,0 +1,122 @@
+\documentclass[a4paper,openany,final]{memoir}
+\usepackage[latin1]{inputenc}
+
+% We are using english as written language
+\usepackage[english]{babel}
+\selectlanguage{english}
+%\renewcommand{\danishhyphenmins}{22}
+
+\usepackage{graphicx} % needed for advanced images
+\usepackage{tabularx} % needed for advanced tables
+\usepackage[table]{xcolor} % needed for coloring cells
+\usepackage{float} % needed for float forced placements
+\usepackage{calc} % Used for minipages (two images side-by-side)
+\usepackage{hyperref} % clickable links in PDF (e.g. in table of contents)
+\usepackage{memhfixc}
+\usepackage{amsmath,amssymb,gensymb,amsthm,textcomp} % math symbols
+\renewcommand{\qedsymbol}{} %Remove QED symbol from proofs
+\usepackage{color} % allows you to use colored text, see http://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage{verbatim}
+\usepackage{listings} % Required for sourcecode listings
+\usepackage{program} % Required for algorithmic listings
+\usepackage{pdfpages} % Required for frontpage
+\usepackage{appendix}
+\usepackage{lastpage} % Required for total pages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIXME package
+% changing draft -> final will prevent fixme's from showing up in the PDF
+\usepackage[draft]{fixme} 
+% - Using fixme -
+% for short notes (comment will be shown in margin)
+% \fxnote{comment here}
+% for longer notes (comment will be shown on page)
+% \anfxnote{summary}{long comment here}
+% 
+% You can list fixme's with \listoffixmes
+% for more options, see: http://www.lrde.epita.fr/~didier/software/fixme.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibtex settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[numbers]{natbib}
+\bibliographystyle{plainnat}
+
+% Page-style for chapter pages, with page numbers to the side instead of centered
+%\copypagestyle{proper-chapter}{ruled}
+%\makeheadrule{proper-chapter}{0pt}{0pt}
+%\makeevenhead{proper-chapter}{}
+%\makeoddhead{proper-chapter}{}
+%\aliaspagestyle{chapter}{proper-chapter}
+
+% margins
+\setlrmargins{*}{1.9in}{*}
+\checkandfixthelayout
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%\fontencoding{T1}
+%\fontfamily{}
+%\fontseries{m}
+%\fontshape{it}
+%\fontsize{12}{15}
+%\selectfont
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section numbering depth
+% 0 - chapters
+% 1 - sections
+% 2 - subsections
+% 3 - subsubsections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{2} % if you change this to 3 for example, subsubsections will be numbered
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Content numbering depth
+% 0 - chapters
+% 1 - sections
+% 2 - subsections
+% 3 - subsubsections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{2}
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\pagestyle{ruled}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrpage2}
+\ifoot[\pagemark]{\pagemark}
+\cfoot[]{}
+\ofoot[]{}
+
+\pagestyle{scrplain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chapterstyles
+% only leave one of these uncommented
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapterstyle{bianchi}
+%\chapterstyle{veelo}
+\chapterstyle{thatchre}
+
+\begin{document}
+	\input{Content/Frontpage}	
+	\input{Content/Titlepage}								
+	\input{Content/Prefase}									
+	\input{Content/ToC}
+	\input{Content/Projectdescription}
+	\input{Content/Demarcation}			
+	\input{Content/Problemanalysis}					
+	\input{Content/Process}								
+	\input{Content/Product}									
+	\input{Content/Conclusion}							
+	\input{Content/Perspective}					
+	\appendix
+	\appendixpage
+	\input{Content/Annex}										
+	\input{Content/Appendix}								
+	\input{Content/Litterature}					
+	\input{Content/LoF}							
+\end{document}
