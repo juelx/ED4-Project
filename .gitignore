@@ -30,6 +30,6 @@
 *.vrb
 *.xdy
 *.tdo
+*.pdf
 *.sublime-project
 *.sublime-workspace
-*.pdf
